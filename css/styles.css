@@ -1,0 +1,871 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --white-color: #ffffff;
+    --primary-color: #0dcaf0;
+    --secondary-color: #0d6efd;
+    --section-bg-color: #f0f8ff;
+    --dark-color: #000000;
+    --navbar-bg-color: #273053;
+    --p-color: #717275;
+    --highlight-icon-color: #ff0100;
+    --main-transition: 0.4s all ease-in-out;
+}
+
+body {
+    margin: 0;
+}
+
+/*? ************************ Common Styles *************************/
+
+.flex {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--main-transition);
+    text-transform: capitalize;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: -0.5rem;
+}
+
+.section-title span:last-child {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/*! ************************ Navbar *************************/
+
+nav {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav .nav-container {
+    width: 75%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav .nav-container .logo {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+    text-transform:uppercase;
+    font-weight: 300;
+    cursor: default;
+}
+
+nav .nav-container .logo i {
+    font-size: 2.5rem;
+}
+
+ul{
+    gap: 35px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav .nav-container ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav .nav-container ul li button {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-weight: bold;
+    font-size: inherit;
+}
+
+nav .nav-container ul li button:hover {
+    background-color: var(--primary-color);
+}
+
+/*! ************************ Hero Section *************************/
+
+.hero {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    color: var(--white-color);
+    flex-direction: column;
+    
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#27305300, #273053 );
+    z-index: -1;
+}
+
+.hero .hero-text {
+    margin-top: 10rem;
+}
+
+.hero .hero-text h1 {
+    text-transform: uppercase;
+    margin-top: 5rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.hero .hero-text h1 span:first-child {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.hero .hero-info {
+    margin-bottom: 3.75rem;
+}
+
+.hero .hero-info span{
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 10px 15px;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.hero .hero-info span:first-child {
+    border: 1px solid var(--white-color);
+    margin-right: -10px;
+}
+
+.hero .hero-info span:last-child {
+    border: 1px solid var(--white-color);
+    border-left: none;
+}
+
+.hero .arrow i {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    align-content: center;
+    transition: var(--main-transition);
+}
+
+.hero i:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+/*! ************************ Highlight Section *************************/
+
+.highlight-section {
+    background-color: var(--navbar-bg-color);
+    padding: 2rem 0;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+}
+
+.highlight-section .highlight {
+    width: 90%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.highlight-section .highlight-container {
+    width: 75%;
+    margin: auto;
+}
+
+.highlight-section .highlight .highlight-item {
+    position: relative;
+    width: 25rem;
+    height: auto;
+    overflow: hidden;
+}
+
+.highlight-section .highlight .highlight-item .img-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.highlight-section .highlight .highlight-item img {
+    width: 100%;
+    display: block;
+    height: auto;
+    transition: transform 0.7s ease-in-out;
+}
+
+.highlight-section .highlight .highlight-item h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.75rem;
+    transition: var(--main-transition);
+    z-index: 2;
+}
+
+.highlight-section .highlight .highlight-item i {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--highlight-icon-color);
+    color: #000000;
+    font-size: 1.5rem;
+    width: 4rem;
+    height: 3rem;
+    align-content: center;
+    transition: var(--main-transition);
+    border-radius: 20%;
+    z-index: 2;
+}
+
+.highlight-section .highlight .highlight-item:hover img {
+    transform: scale(1.2);
+}
+
+.highlight-section .highlight .highlight-item:hover h2 {
+    opacity: 0;
+}
+
+.highlight-section .highlight .highlight-item:hover i {
+    opacity: 1;
+}
+
+/*! ************************ About Section *************************/
+
+.about {
+    padding: 4rem 0;
+}
+
+.about .about-container {
+    width: 100%;
+    padding: 0 13rem;
+}
+
+.about .content .flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about .content .item {
+    width: 50%;
+    padding: 0 1rem;
+}
+
+.about .content .item h3{
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.about .content .item p,
+.speakers .container .top .speaker-text p{
+    color: var(--p-color);
+    margin-bottom: 2rem;
+}
+
+.about .content .item .buttons button {
+    padding: 10px 20px; 
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.about .content .item .buttons button:first-child {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.about .content .item .buttons button:first-child:hover,
+.about .content .item .buttons button:last-child:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+} 
+
+.about .content .item .buttons button:last-child {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+}    
+
+.about .content .item h4{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.about .content .item hr {
+    margin-bottom: 3rem;
+    border-color: #71727517;
+}
+
+.about .content .item .flex {
+    gap: 0.5rem;
+} 
+
+.about .content .item .images img {
+    width: 3.12rem;
+    height: 3.12rem;
+    border: 2px solid var(--white-color);
+    border-radius: 100px;
+    object-fit: cover;
+    margin-right: -0.75rem;
+}
+
+.about .content .item .flex p {
+    padding-left: 2rem;
+}
+
+/*! ************************ Speakers Section *************************/
+
+.speakers {
+    padding: 7rem 0;
+    background-color: var(--section-bg-color);
+}
+
+.speakers .speakers-container {
+    width: 100%;
+    padding: 0 13rem;
+}
+
+.speakers .speakers-container .top {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.speakers .speakers-container .top .speaker-text,
+.speakers .speakers-container .top .bigImg {
+    width: 50%;
+    padding: 0 1rem;
+}
+
+.speakers .speakers-container .top .speaker-text {
+    padding-left: 5rem;
+    padding-right: 9rem;
+}
+
+.speakers .speakers-container .top .bigImg {
+    position: relative;
+    padding: 0;
+}
+
+.speakers .speakers-container .top .bigImg img {
+    width: 100%;
+}
+
+.speakers .speakers-container .top .bigImg .speakerFeatured {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.75rem;
+    padding: 0 15px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.speakers .speakers-container .top .bigImg .speakerFeatured p {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--white-color);
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 5px 15px;
+    background-color: var(--white-color);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 1s ease-in-out;
+    z-index: 0;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails:hover::before {
+    width: 100%;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails .name,
+.speakers .speakers-container .top .bigImg .speakerDetails ul {
+    z-index: 1;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails .name h3 {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails .name p {
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--p-color);
+    font-size: 0.75rem;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails ul {
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails:hover ul {
+    opacity: 1;
+
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails ul li i {
+    font-size: 1.2rem;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    align-content: center;
+}
+
+.speakers .speakers-container .top .bigImg .speakerDetails ul li i:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.speakers .speakers-container .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.speakers .speakers-container .bottom .image {
+    width: calc(25% - 1rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.speakers .speakers-container .bottom .image img {
+    width: 100%;
+    height: auto;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: var(--white-color);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 1s ease-in-out;
+    z-index: 0;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails:hover::before {
+    width: 100%;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails .name,
+.speakers .speakers-container .bottom .image .speakerDetails ul {
+    z-index: 1;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails .name h3 {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails .name p {
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--p-color);
+    font-size: 0.75rem;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails ul {
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails:hover ul {
+    opacity: 1;
+
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails ul li i {
+    font-size: 1.2rem;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    align-content: center;
+}
+
+.speakers .speakers-container .bottom .image .speakerDetails ul li i:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+/*! ************************ Schedule Section *************************/
+
+.schedule .schedule-container {
+    text-align: center;
+}
+
+.schedule .schedule-container .title {
+    margin-bottom: 3rem;
+}
+
+.schedule .schedule-container .daysRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.schedule .schedule-container .daysRow .day {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+    padding: 1rem 4rem;
+    text-align: left;
+}
+
+/*! ************************ Event Speaker Section *************************/
+
+.eventSpeaker {
+    background-image: url(/assets/eventSpeakerbg.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 4rem 0;
+    z-index: 0;
+}
+
+.eventSpeaker .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: #0000004f;
+    z-index: 1;
+}
+
+.eventSpeaker .eventSpeaker-container {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    z-index: 2;
+    position: relative;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.eventSpeaker .eventSpeaker-container .right {
+    width: 50%;
+}
+
+.eventSpeaker .eventSpeaker-container .right h2 {
+    color: var(--white-color);
+    font-size: 2.75rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+.eventSpeaker .eventSpeaker-container .right p {
+    color: var(--white-color);
+    margin-top: 0;
+}
+
+.eventSpeaker .eventSpeaker-container button {
+    padding: 10px 20px; 
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: var(--main-transition);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-right: 7rem;
+}
+
+.eventSpeaker .eventSpeaker-container button:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+
+}
+
+/*! ************************ Pricing Section *************************/
+
+.pricing {
+    padding: 4rem 0;
+    padding-bottom: 7rem;
+}
+
+.pricing .title {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.pricing .plans {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pricing .plans .plan {
+    position: relative;
+    background-color: var(--white-color);
+    box-shadow: 0 4px 20px #0000001A;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 0 1rem;
+    width: 25rem;
+}
+
+.pricing .plans .plan .planTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: var(--navbar-bg-color);
+    padding: 10px 40px;
+    color: var(--white-color);
+}
+
+.pricing .plans .plan .planTitle h2:first-child{
+    font-size: 1.8rem;
+}
+
+.pricing .plans .plan .planDetails {
+    color: var(--p-color);
+    margin-top: 7rem;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.pricing .plans .plan .planDetails .detail {
+    display: flex;
+    align-items: center;
+}
+
+.pricing .plans .plan .planDetails .detail i {
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    color: #1E2A55;
+}
+
+.pricing .plans .plan .planDetails hr {
+    border: 1px solid #e0e0e0;
+    margin: 1rem 0.5rem;
+}
+
+.pricing .plans .plan button {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    transition: background-color (--main-transition);
+}
+
+.pricing .plans .plan button:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/*! ************************ Venue Section *************************/
+
+.venue {
+    background-color: var(--section-bg-color);
+    padding: 4rem 0;
+}
+
+.venue .venue-container{
+    width: 80%;
+    margin: auto;
+}
+
+.venue .venue-container .section-title {
+    text-transform: none;
+    font-weight: bold;
+    font-size: 2.7rem;
+    margin-bottom: 3rem;
+}
+
+.venue .venue-container .map-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.venue .venue-container .map-container .left {
+    width: 50%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.venue .venue-container .map-container .left iframe {
+    width: 100%;
+}
+
+.venue .venue-container .map-container .right{
+    width: 45%;
+}
+
+.venue .venue-container .map-container .right .address {
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px #0000001A;
+}
+
+.venue .venue-container .map-container .right .address .address-title {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+    padding: 1.5px 2rem;
+    font-size: 1.5rem;
+}
+
+.venue .venue-container .map-container .right .address .address-details,
+.venue .venue-container .map-container .right .address .address-contact {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.5rem 2rem;
+}
+
+.venue .venue-container .map-container .right .address .address-details h4, 
+.venue .venue-container .map-container .right .address .address-details i{
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.venue .venue-container .map-container .right .address .address-contact h5, 
+.venue .venue-container .map-container .right .address .address-contact i { 
+    font-size: 1.5rem;
+    color: var(--p-color);
+    margin: 0;
+}
+
+/*! ************************ Contact Section *************************/
+
+.contact {
+    height: 100vh;
+}
+
+
+
+
+
+
+
+
+/*? ************** Media ***************/
+
+@media (max-width: 800px) {
+    .container {
+        width: 90%;
+    }
+
+    .about .content {
+        flex-direction: column;
+    }
+}
