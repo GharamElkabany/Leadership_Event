@@ -571,7 +571,6 @@ nav .nav-container ul li button:hover {
 
 .speakers .speakers-container .bottom .image .speakerDetails:hover ul {
     opacity: 1;
-
 }
 
 .speakers .speakers-container .bottom .image .speakerDetails ul li i {
@@ -590,26 +589,136 @@ nav .nav-container ul li button:hover {
 
 /*! ************************ Schedule Section *************************/
 
+.schedule {
+    padding: 5rem 0;
+}
+
 .schedule .schedule-container {
-    text-align: center;
+    width: 100%;
+    padding: 0 13rem;
 }
 
 .schedule .schedule-container .title {
     margin-bottom: 3rem;
+    text-align: center;
 }
 
 .schedule .schedule-container .daysRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 3rem;
 }
 
 .schedule .schedule-container .daysRow .day {
-    background-color: var(--navbar-bg-color);
-    color: var(--white-color);
-    padding: 1rem 4rem;
-    text-align: left;
+    position: relative;
+    width: calc(25% - 0.2rem);
+    background-color: var(--white-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 0 2rem;
+}
+
+.schedule .schedule-container .daysRow .day.active h2{
+    color: var(--primary-color);
+}
+
+.schedule .schedule-container .daysRow .day:hover h2{
+    color: var(--primary-color);
+}
+
+.schedule .schedule-container .daysRow .day:hover::before,
+.schedule .schedule-container .daysRow .day.active:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 1s ease-in-out;
+}
+
+.schedule .schedule-container .daysRow .day h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.schedule .schedule-container .daysRow .day p {
+    color: var(--p-color);
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+.schedule .schedule-container .list hr {
+    margin: 3rem auto;
+    border: 1px solid #eee;
+}
+
+.schedule .schedule-container .list .event {
+    display: flex;
+    align-items: start;
+    gap: 2rem;
+}
+
+.schedule .schedule-container .list .event img {
+    width: 32%;
+    border-radius: 20px;
+}
+
+.schedule .schedule-container .list .event .event-details h2{
+    margin: 0;
+    font-size: 2rem;
+}
+
+.schedule .schedule-container .list .event .event-details p {
+    color: var(--p-color);
+    margin-top: 0.5rem;
+}
+
+.schedule .schedule-container .list .event .event-footer {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-speaker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-speaker img {
+    width: 3.12rem;
+    height: 3.12rem;
+    object-fit: cover;
+    border: 2px solid var(--white-color);
+    border-radius: 100px;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-speaker .speaker-details p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-speaker .speaker-details p:first-child {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-time-place {
+    display: flex;
+    align-items: center;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-time-place i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.schedule .schedule-container .list .event .event-footer .event-time-place p {
+    margin: 0;
 }
 
 /*! ************************ Event Speaker Section *************************/
