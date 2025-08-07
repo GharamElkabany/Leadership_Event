@@ -478,7 +478,6 @@ nav .nav-container ul li button:hover {
 
 .speakers .speakers-container .top .bigImg .speakerDetails:hover ul {
     opacity: 1;
-
 }
 
 .speakers .speakers-container .top .bigImg .speakerDetails ul li i {
@@ -848,13 +847,92 @@ nav .nav-container ul li button:hover {
 /*! ************************ Contact Section *************************/
 
 .contact {
-    height: 100vh;
+    background-image: url(/assets/contactbg.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 7rem 0;
+}
+
+.contact .form-container {
+    background-color: var(--white-color);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+.contact .form-container .form-title {
+    background-color: var(--navbar-bg-color);
+    color: var(--white-color);
+    font-size: 2rem;
+}
+
+.contact .form-container .form-title h2 {
+    margin: 0;
+    padding: 30px 40px;
+}
+
+.contact .form-container .form-details {
+    padding: 2rem;
+}
+
+.contact .form-container .form-details form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact .form-container .form-details form .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact .form-container .form-details form .form-group input, 
+.contact .form-container .form-details form .form-group textarea {
+    background-color: var(--section-bg-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact .form-container .form-details form .form-group input {
+    flex: 1;
+}
+
+.contact .form-container .form-details form .form-group textarea {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact .form-container .form-details button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 30px;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.contact .form-container .form-details button:hover {
+    background-color: var(--navbar-bg-color);
 }
 
 
+/*! ************************ Footer Section *************************/
 
-
-
+.footer {
+    height: 100vh;
+}
 
 
 
